@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prototype</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,minimal-ui">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <style>   
+    .phone-case {
+        position: relative;
+        width: 380px;
+        height: 810px;
+        background: url("img/phone-case.png") no-repeat right top;
+        margin-left: 20px;
+    }
+    .phone-case .phone-contents {
+        position: absolute;
+        width: 320px !important;
+        height: 568px;
+        top: 104px;
+        left: 37px;
+        background: white;
+    }
+  </style>
+</head>
+<body>
+  <div class='container'>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="phone-case">
+          <iframe src="base.html" scrolling="no" frameborder="0" height="568" allowtransparency="true" allowfullscreen="true" class="phone-contents" style="width: 100%; overflow: hidden;"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
