@@ -1,0 +1,43 @@
+<ion-view title="{{ viewTitle }}" class="view-swipe" hide-back-button="true">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-content class="has-header padding swipe-back">
+        <div ng-hide="viewReady" class="spinner">
+            <i class="fa fa-circle-o-notch fa-spin"></i>
+            <span class="p">Loading</span>
+            <h3>{{ viewLoadingHeader }}</h3>
+            <blockquote class="swipe-quote">
+                <p>{{ viewLoadingFact.quote }}</p>
+                <footer ng-show="viewLoadingFact.src">--{{ viewLoadingFact.src }}</footer>
+            </blockquote>
+        </div>
+        <swipe-cards ng-show="viewReady">
+            <swipe-card on-destroy="swipe(card.fbId)" on-drag="dragged($event)"
+                        ng-repeat="card in cards" class="box question"
+                        style="border: 1px solid #bfbfbb; padding:10px;">
+                <h3 class="text-center title">{{ card.name }}</h3>
+                <div>
+                    <img class="question-image" ng-src="{{card.image}}" imageonload="imageLoaded()" />
+                </div>
+                <div>
+                    <blockquote class="swipe-quote">
+                        <p>{{ card.caption }}</p>
+                        <footer>-- {{ card.date | date:'shortDate' }}</footer>
+                    </blockquote>
+                </div>
+                <div class="button-bar">
+                    <button class="button question-bg-blank button-positive question-no" ng-click="swipeLeft(card.fbId)">
+                        <i class="fa fa-hand-o-left"></i> Pass
+                    </button>
+                    <button class="button question-bg-blank button-positive question-yes" ng-click="swipeRight(card.fbId)">
+                        Like <i class="fa fa-thumbs-o-up"></i>
+                    </button>
+                </div>
+            </swipe-card>
+        </swipe-cards>
+        <div ng-show="moreReady">
+            <button class="button button-block button-positive" ng-click="getMoreCards()">Load More</button>
+        </div>
+    </ion-content>
+</ion-view>
