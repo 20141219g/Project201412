@@ -1,3 +1,11 @@
+body{
+  margin-top: 70px;
+}
+
+footer{
+  margin-bottom: 80px;
+}
+
 .phone-case {
   position: relative;
   width: 380px;
@@ -19,6 +27,13 @@
 @media only screen and (max-width: 780px), only screen and (max-device-width: 780px)
 {
 /* Optimizations for tablet screen sizes */
+
+}
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px)
+{
+/* Optimizations for phone screen sizes */
+
 
   .col-md-12 {
     padding: 0px;
@@ -43,9 +58,4 @@
     margin: 0px auto;
     background: white;
   }
-}
-
-@media only screen and (max-width: 480px), only screen and (max-device-width: 480px)
-{
-/* Optimizations for phone screen sizes */
 }
