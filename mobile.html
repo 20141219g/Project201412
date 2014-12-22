@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Prototype</title>
+
+    <link href="lib/ionic/css/ionic.min.css" rel="stylesheet">
+
+    <link href="css/font-awesome-4.2.0.min.css" rel="stylesheet">
+
+    <link href="css/ionic.app.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+
+    <!-- your app's js -->
+    <script src="lib/openfb-angular.js"></script>
+    <script src="lib/ionic.tdcards.prototype.js"></script>
+    <script src="js/app.bundle.js"></script>
+</head>
+
+<body ng-app="starter" animation="slide-left-right-ios7" no-scroll="{{ !scrollable }}" class="mobile-only">
+    <!-- OpenFB needs id=main for callback -->
+    <ion-nav-view id="main"></ion-nav-view>
+</body>
+</html>
