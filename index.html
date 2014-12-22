@@ -1,39 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Prototype</title>
+  <title>MyFriendsMe.com - Remember my friends</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0,minimal-ui">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-  <style>   
-    .phone-case {
-        position: relative;
-        width: 380px;
-        height: 810px;
-        background: url("img/phone-case.png") no-repeat right top;
-        margin-left: 20px;
-    }
-    .phone-case .phone-contents {
-        position: absolute;
-        width: 320px !important;
-        height: 568px;
-        top: 104px;
-        left: 37px;
-        background: white;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">MyFriendsMe.com</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
   <div class='container'>
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-6">
         <div class="phone-case">
           <iframe src="mobile.html" scrolling="no" frameborder="0" height="568" allowtransparency="true" allowfullscreen="true" class="phone-contents" style="width: 100%; overflow: hidden;"></iframe>
         </div>
       </div>
+
+      <div class="col-md-6">
+        <h1 id="about">About</h1>
+        <p>
+          In the world of interconnected Instagram and Facebook, we seemingly have lost touch with those friends who don't show up in our friend feed.
+        </p>
+        <p>
+          We created this with one simple purpose: <b>Quickly update us on our friends who we haven't seen in a while</b>.
+        </p>
+
+        <p>
+          Doug and <a href="http://hk.linkedin.com/pub/justin-louie/26/a16/9aa">Justin</a> hacked this together in a few hours. Questions? Just ask.
+        </p>
+
+        <p>
+          The code is nothing complidated/special, but it is freely available here: <a href="https://github.com/20141219g/Project201412">MyFriendsMe Project</a>.
+        </p>
+      </div>
     </div>
+
+    <footer class="footer">
+
+    </footer>
   </div>
 </body>
 </html>

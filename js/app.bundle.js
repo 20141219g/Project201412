@@ -21,7 +21,7 @@ angular.module('starter', [ 'ionic',
         });
 
         OpenFB.init('375368743085', $window.location.origin + "/oauthcallback.html");
-        //OpenFB.init('100542479991638', $window.location.origin + "/oauthcallback.html");
+        // OpenFB.init('100542479991638', $window.location.origin + "/oauthcallback.html");
 
         $rootScope.$on('$stateChangeStart', function(event, toState) {
             if (toState.name !== "app.splash" && toState.name !== "app.logout" && !$window.sessionStorage['fbtoken']) {
@@ -234,6 +234,7 @@ angular.module('starter.controllers', [])
             //'publish_stream,' +
             //'public_profile,' +
             //'basic_info,' +
+            'friends_photos,' +
             'friends_status,' +
             'user_friends,' +
             'user_status').then(
