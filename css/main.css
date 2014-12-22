@@ -1,0 +1,51 @@
+.phone-case {
+  position: relative;
+  width: 380px;
+  height: 810px;
+  background: url("../img/phone-case.png") no-repeat right top;
+  margin: 0px auto;
+}
+.phone-case .phone-contents {
+  position: absolute;
+  width: 320px !important;
+  height: 568px;
+  top: 104px;
+  left: 37px;
+  background: white;
+}
+
+/* Main CSS here, optimized for desktop. */
+
+@media only screen and (max-width: 780px), only screen and (max-device-width: 780px)
+{
+/* Optimizations for tablet screen sizes */
+
+  .col-md-12 {
+    padding: 0px;
+  }
+
+  .navbar {
+    margin-bottom: 0px;
+  }
+
+  .phone-case {
+    position: relative;
+    width: 380px;
+    height: 810px;
+    background: none;
+    margin: 0px auto;
+    padding: 0px;
+  }
+  .phone-case .phone-contents {
+    top: 0px;
+    width: 320px !important;
+    height: 568px;
+    margin: 0px auto;
+    background: white;
+  }
+}
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px)
+{
+/* Optimizations for phone screen sizes */
+}
