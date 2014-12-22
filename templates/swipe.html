@@ -36,6 +36,19 @@
                 </div>
             </swipe-card>
         </swipe-cards>
+        <div ng-show="viewDone">
+            <div class="box question" style="border: 1px solid #bfbfbb; padding:10px;">
+                <h3 class="text-center title">Caught Up</h3>
+                <div class="text-center">
+                    <i class="fa fa-5x fa-bell-o"></i>
+                </div>
+                <div class="text-center">
+                    <blockquote class="swipe-quote">
+                        <p>Completed swiping through your friend list</p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
         <div ng-show="moreReady">
             <button class="button button-block button-positive" ng-click="getMoreCards()">Load More</button>
         </div>

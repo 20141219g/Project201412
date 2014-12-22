@@ -123,6 +123,7 @@ angular.module('starter.controllers', [])
                 // end of cards
                 //$state.go('app.messages');
                 $scope.moreReady = true;
+                $scope.getMoreCards();
             }
         };
 
@@ -166,6 +167,7 @@ angular.module('starter.controllers', [])
         };
         getQuotesLoading(true);
 
+        $scope.viewDone = false;
         $scope.viewReady = false;
         $scope.viewTitle = "Loading";
         var imgLoaded = 0;
@@ -196,6 +198,11 @@ angular.module('starter.controllers', [])
                     imgLoaded = 0;
 
                     $log.log('Cards: ', $scope.cards);
+
+                    if (0 == cards.length) {
+                        $scope.viewDone = true;
+                        $scope.viewReady = true;
+                    }
                 } else {
                     $scope.cards = cards;
                     $log.log('Error: ' + JSON.stringify(error));
@@ -227,6 +234,7 @@ angular.module('starter.controllers', [])
             //'publish_stream,' +
             //'public_profile,' +
             //'basic_info,' +
+            'friends_status,' +
             'user_friends,' +
             'user_status').then(
                 function () {
@@ -339,6 +347,17 @@ angular.module('starter.services', [])
         var getMeUrl = function() {
             return "/v1.0/me?fields=friends{name,picture}"; //,home{from}";
         };
+        // Randomize array element order in-place.
+        // Using Fisher-Yates shuffle algorithm.
+        var shuffle = function shuffleArray(array) {
+            for (var i = array.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+            return array;
+        };
         var processMeJson = function(json) {
             //$log.log("Processing json: " + JSON.stringify(json));
             resetCache();
@@ -351,6 +370,7 @@ angular.module('starter.services', [])
                 };
                 cardsCache.push(entry);
             }
+            shuffle(cardsCache);
             $log.log("Processed " + cardsCache.length + " cards");
         };
         var processCards = function(pageIndex, callback) {
